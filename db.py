@@ -13,7 +13,7 @@ def table_roles():
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 username TEXT NOT NULL,
                 password TEXT NOT NULL,
-                nivel TEXT NOT NUL
+                nivel TEXT NOT NULL
             );""")
     except Exception as e:
         print(f"\nlog [create_table_roles]\n{e}")

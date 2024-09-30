@@ -14,7 +14,7 @@ def read_data(username, password):
     con, cur = connection()
     try:
         cur.execute("""
-            SELECT username, password FROM roles
+            SELECT id FROM roles
             WHERE username = ? AND password = ?;""", (username, password))
         datas = cur.fetchall() 
         return datas

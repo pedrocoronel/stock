@@ -1,3 +1,8 @@
+'''
+Old version DATABASE\n
+End of support 06/10/24
+'''
+
 import sqlite3
 
 def connection():
@@ -15,10 +20,10 @@ def table_roles():
                 password TEXT NOT NULL,
                 nivel TEXT NOT NULL
             );""")
+        con.commit()
     except Exception as e:
         print(f"\nlog [create_table_roles]\n{e}")
-    else:
-        con.commit()
+    finally:
         con.close() 
 
 def table_stock():
@@ -32,10 +37,10 @@ def table_stock():
                 validity TEXT,
                 quantity INTEGER NOT NULL
             );""")
+        con.commit()
     except Exception as e:
         print(f"\nlog [create_table_stock]\n{e}")
-    else:
-        con.commit()
+    finally:
         con.close() 
 
 def create_tables():

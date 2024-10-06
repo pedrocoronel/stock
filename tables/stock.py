@@ -1,4 +1,4 @@
-from db import connection
+from mysql09 import connection
 
 def insert_data(name, price, validity, quantity):
     con, cur = connection()
@@ -8,4 +8,4 @@ def insert_data(name, price, validity, quantity):
             VALUES (?, ?, ?, ?);""", (name, price, validity, quantity))
         con.commit()
     finally:
-        con.close() 
+        con.close()

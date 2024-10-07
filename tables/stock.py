@@ -7,5 +7,7 @@ def insert_data(name, price, validity, quantity):
             INSERT INTO stock (name, price, validity, quantity) 
             VALUES (?, ?, ?, ?);""", (name, price, validity, quantity))
         con.commit()
+    except Exception as e:
+        print(f"log [stock/insert_data]: {e}\n")
     finally:
-        con.close()
+        con.close() 

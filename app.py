@@ -15,7 +15,7 @@ class profile:
 
             roles.insert_data(username, password, nivel)
         except Exception as e:
-            print(f"\nlog [app/singup]: {e}")
+            print(f"log [app/singup]: {e}\n")
             exit()
 
     @staticmethod
@@ -30,12 +30,11 @@ class profile:
             datas = roles.read_data(username, password)
             if datas and isinstance(datas, list) and len(datas) > 0:
                 id_value = datas[0][0]
-                # print(id_value)
-                return
+                return id_value
             else: 
-                400
+                profile.singup()
         except Exception as e:
-            print(f"\nlog [app/login]: {e}")
+            print(f"log [app/login]: {e}\n")
             exit()
 
 class sys:
@@ -52,7 +51,7 @@ class sys:
                     exit()
                 else: return sys.user()
         except Exception as e:
-            print(f"\nlog [app/user]: {e}")
+            print(f"log [app/user]: {e}\n")
             exit()
 
     def adm():
@@ -60,7 +59,7 @@ class sys:
 
     @staticmethod
     def menu():
-        itens = ["Sair", "Ver itens"]
+        itens = ["Exit", "View items"]
         print("# escambo system #")
         for index, item in enumerate(itens):
             print(f"- [{index}] {item}")
@@ -74,7 +73,7 @@ class sys:
                     print(200)
                 case _: return sys.menu()
         except Exception as e:
-            print(f"\nlog [app/menu]: {e}")
+            print(f"log [app/menu]: {e}\n")
             exit()
 
 def main():
